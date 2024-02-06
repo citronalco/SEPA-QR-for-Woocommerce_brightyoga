@@ -211,7 +211,8 @@ function muxp_create_qrcode ($amount,$orderid) {
  $payloadtext = __('Order-ID:' , 'mxp-sepa-qr-code-addon-for-woocommerce') . ' ' . $orderid;
  $bacs_accounts  = get_option( 'woocommerce_bacs_accounts');
  if ( ! empty( $bacs_accounts[0] ) ) {
-    $iban =  $bacs_accounts[0]['iban'];
+	$iban = $bacs_accounts[0]['iban'];
+    $iban =  preg_replace('/\s+/', '', $iban);
     $bic = $bacs_accounts[0]['bic'];
     $company = $bacs_accounts[0]['account_name'];
   }
