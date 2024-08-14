@@ -6,18 +6,18 @@
  * @package   muxp/sepaqr
  * @author    Bureau fuer Angelegenheiten 
  * @license   GPL-2.0+
- * @link      https://github.com/Coernel82/SEPA-QR-for-Woocommerce
+ * @link      https://github.com/petermorlion/SEPA-QR-for-Woocommerce
  * @copyright 2022 BUFANG
  *
  * @wordpress-plugin
  * Plugin Name:       SEPA-QR-Code for Woocommerce
- * Plugin URI:        https://github.com/Coernel82/SEPA-QR-for-Woocommerce
+ * Plugin URI:        https://github.com/petermorlion/SEPA-QR-for-Woocommerce
  * Description:       Adds a SEPA QR code to the Woocommerce Thankyou page and to the confirmation e-mail. The QR code is generated locally due to privacy reasons and is using the IBAN and BIC of the first BACS account.
  * Version:           1.1.0
- * Author:            https://github.com/Coernel82/SEPA-QR-for-Woocommerce
+ * Author:            https://github.com/petermorlion/SEPA-QR-for-Woocommerce
  * Requires at least: 5.0
  * Requires PHP:	  7.0
- * Author URI:        https://github.com/Coernel82/SEPA-QR-for-Woocommerce
+ * Author URI:        https://github.com/petermorlion/SEPA-QR-for-Woocommerce
  * Text Domain:       mxp-sepa-qr-code-addon-for-woocommerce
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

@@ -23,7 +23,7 @@ Nothing special:
 * Click install and activate
 # Translation
 The plugin does not come with translations yet. So if you need a translation open the muxp-sepaqr.php file, find the few words you need to translate and translate to your purpose.
-The problem is that the translations will be lost after an update. So your programing help for proper localization is highly appreciated! Just do it and make a pull request on [GitHub](https://github.com/Coernel82/SEPA-QR-for-Woocommerce)
+The problem is that the translations will be lost after an update. So your programing help for proper localization is highly appreciated! Just do it and make a pull request on [GitHub](https://github.com/petermorlion/SEPA-QR-for-Woocommerce)
 # What it does
 places an image with the SEPA-QR-Code in the
 * thank-you-page after placing an order
@@ -85,7 +85,7 @@ I am more then happy if someone integrates the code into the Woocommerce core! T
 
 = I can't see the QR-Code in a specific email client =
 
-This might be due to the fact that some email clients won't show Base64-encoded images. Your help is appreciated! Have a look at https://github.com/Coernel82/SEPA-QR-for-Woocommerce/issues/17
+Pleas open an issue on [GitHub](https://github.com/petermorlion/SEPA-QR-for-Woocommerce/issues)
 
 = What about privacy / GDPR =
 
