@@ -12,13 +12,13 @@
  * @wordpress-plugin
  * Plugin Name:       SEPA-QR-Code for Woocommerce
  * Plugin URI:        https://github.com/petermorlion/SEPA-QR-for-Woocommerce
- * Description:       Adds a SEPA QR code to the Woocommerce Thankyou page and to the confirmation e-mail. The QR code is generated locally due to privacy reasons and is using the IBAN and BIC of the first BACS account.
+ * Description:       Free plugin that adds a SEPA-QR Code for bank transfer payments (bacs) in the WooCommerce emails and order confirmation screen.
  * Version:           1.1.0
  * Author:            https://github.com/petermorlion/SEPA-QR-for-Woocommerce
  * Requires at least: 5.0
  * Requires PHP:	  7.0
  * Author URI:        https://github.com/petermorlion/SEPA-QR-for-Woocommerce
- * Text Domain:       mxp-sepa-qr-code-addon-for-woocommerce
+ * Text Domain:       sepa-qr-code-addon-for-woocommerce
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
@@ -69,7 +69,7 @@ function muxp_add_text_to_thankyoupage($order_id) {
 	$order_data = $order->get_data(); 
     // do we need the user? if so: $user = $order->get_user();
 	if ( !empty($order->get_total()) && (float)$order->get_total() > 0 ) {
-		echo '<p>' . esc_attr(__('For a convenient payment scan this qr code!' , 'mxp-sepa-qr-code-addon-for-woocommerce')) . '<br>';
+		echo '<p>' . esc_attr(__('For a convenient payment scan this qr code!' , 'sepa-qr-code-addon-for-woocommerce')) . '<br>';
 		echo '<img class="muxp-bacs-qrcode" src="' . esc_attr(muxp_get_qrcode($order->get_total(), $order->get_order_number())) . '" alt="qr-code"></p>';
 	} 
 }
@@ -103,9 +103,9 @@ function muxp_email_after_order_table( $order, $sent_to_admin, $plain_text, $ema
 		<p>
 			<?php
 			if ($store_qr_code_as_image !== 'on') {
-				echo esc_attr(__('For a convenient payment scan this qr code! Some email clients unfortunately will not show Base64 encoded images. Sorry for that!' ,'mxp-sepa-qr-code-addon-for-woocommerce'));
+				echo esc_attr(__('For a convenient payment scan this qr code! Some email clients unfortunately will not show Base64 encoded images. Sorry for that!' ,'sepa-qr-code-addon-for-woocommerce'));
 			} else {
-				echo esc_attr(__('For a convenient payment scan this qr code!' ,'mxp-sepa-qr-code-addon-for-woocommerce'));
+				echo esc_attr(__('For a convenient payment scan this qr code!' ,'sepa-qr-code-addon-for-woocommerce'));
 			}
 			
 			?>
@@ -136,7 +136,7 @@ function muxp_qrpage_from_hash($template) {
 	$md5 = $wp_query->query[muxp_QUERY_PARAM];
 
 	if ( false === muxp_valid_md5($md5) ) { 
-		$html = '<p>' .  __('This is not a valid md5 hash :-( ', 'mxp-sepa-qr-code-addon-for-woocommerce')  . '<br>' .  __('Generating uncached dummy QR for 11 Euro/OrderID 11', 'mxp-sepa-qr-code-addon-for-woocommerce') . '<br><img src="' . muxp_create_qrcode(11,11) . '"></p>';
+		$html = '<p>' .  __('This is not a valid md5 hash', 'sepa-qr-code-addon-for-woocommerce')  . '<br>' .  __('Generating uncached dummy QR for 11 Euro/OrderID 11', 'sepa-qr-code-addon-for-woocommerce') . '<br><img src="' . muxp_create_qrcode(11,11) . '"></p>';
 	} elseif ( false === (  $qrcode = muxp_get_transient_by_hash($md5)  ) ) { 
 		// valid md5, but nothing found, what a pity ...
 		if ( $md5 == "351436ef4b279e1811a6c68a2dd58b1b" ) { 
@@ -208,7 +208,7 @@ function muxp_get_qrcode($amount,$orderid) {
   
 function muxp_create_qrcode ($amount,$orderid) {
 
- $payloadtext = __('Order-ID:' , 'mxp-sepa-qr-code-addon-for-woocommerce') . ' ' . $orderid;
+ $payloadtext = __('Order-ID:' , 'sepa-qr-code-addon-for-woocommerce') . ' ' . $orderid;
  $bacs_accounts  = get_option( 'woocommerce_bacs_accounts');
  if ( ! empty( $bacs_accounts[0] ) ) {
 	$iban = $bacs_accounts[0]['iban'];
@@ -288,13 +288,13 @@ function muxp_valid_md5($md5 ='') {
 add_action('admin_menu', 'muxp_add_admin_menu');
 
 function muxp_add_admin_menu() {
-	add_options_page(__('SEPA QR', 'mxp-sepa-qr-code-addon-for-woocommerce'), __('SEPA QR', 'mxp-sepa-qr-code-addon-for-woocommerce'), 'manage_options', 'muxp_options', 'muxp_settings_page');
+	add_options_page(__('SEPA QR', 'sepa-qr-code-addon-for-woocommerce'), __('SEPA QR', 'sepa-qr-code-addon-for-woocommerce'), 'manage_options', 'muxp_options', 'muxp_settings_page');
 }
 
 function muxp_settings_page() {
 	?>
         <div class="wrap">
-            <h1><?php echo __(esc_html(get_admin_page_title()), 'mxp-sepa-qr-code-addon-for-woocommerce'); ?></h1>
+            <h1><?php echo __(esc_html(get_admin_page_title()), 'sepa-qr-code-addon-for-woocommerce'); ?></h1>
             <form action="options.php" method="post">
                 <div>
                     <?php
@@ -314,9 +314,9 @@ function muxp_settings_page() {
 add_action('admin_init', 'muxp_admin_init');
 
 function muxp_admin_init() {
-	add_settings_section('muxp_gdpr', __('GDPR', 'mxp-sepa-qr-code-addon-for-woocommerce'), 'muxp_settings_callback', 'muxp_settings');
+	add_settings_section('muxp_gdpr', __('GDPR', 'sepa-qr-code-addon-for-woocommerce'), 'muxp_settings_callback', 'muxp_settings');
 	register_setting('muxp_settings', 'muxp_store_qr_code_as_image');
-	add_settings_field('muxp_store_qr_code_as_image', __('Store QR code as image', 'mxp-sepa-qr-code-addon-for-woocommerce'), 'muxp_store_qr_code_as_image_setting_html', 'muxp_settings', 'muxp_gdpr');
+	add_settings_field('muxp_store_qr_code_as_image', __('Store QR code as image', 'sepa-qr-code-addon-for-woocommerce'), 'muxp_store_qr_code_as_image_setting_html', 'muxp_settings', 'muxp_gdpr');
 }
 
 function muxp_settings_callback() {
@@ -327,7 +327,7 @@ function muxp_store_qr_code_as_image_setting_html() {
 ?>
 		<input type="checkbox" name="muxp_store_qr_code_as_image" <?php checked($store_qr_code_as_image, 'on', true); ?> />
         <p class="description">
-            <?php _e("This will store the QR code as an image on your server instead of generating a transient base64 string.", 'mxp-sepa-qr-code-addon-for-woocommerce') ?>
+            <?php _e("This will store the QR code as an image on your server instead of generating a transient base64 string. This has consequences for the GDPR compliance of your website and you should inform your customers as such.", 'sepa-qr-code-addon-for-woocommerce') ?>
         </p>
     <?php
 }
