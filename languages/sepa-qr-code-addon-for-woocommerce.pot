@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.4; wp-6.3\n"
-"X-Domain: sepa-qr-code-addon-for-woocommerce"
+"X-Domain: SEPA-QR-for-Woocommerce"
 
 #. Description of the plugin
 msgid ""
