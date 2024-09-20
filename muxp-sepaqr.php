@@ -266,9 +266,9 @@ function muxp_set_transient ($amount,$id,$qrcode) {
  * Stores the QR code as an image on the server and return the url.
  */
 function muxp_set_persistent($id, $qrcode) {
-	$target_dir = wp_upload_dir()['basedir'] . '/muxp-SEPA-QR-for-Woocommerce';
+	$target_dir = wp_upload_dir()['basedir'] . '/SEPA-QR-for-Woocommerce';
 	if (!is_dir($target_dir)) {
-		mkdir($target_dir);
+		wp_mkdir_p($target_dir);
 	}
 
 	// Remove the 'data:image/png;base64,' part
@@ -276,7 +276,7 @@ function muxp_set_persistent($id, $qrcode) {
 
 	file_put_contents($target_dir . "/$id.png", base64_decode($qrcode_stripped));
 
-	return wp_upload_dir()['baseurl'] . "/muxp-SEPA-QR-for-Woocommerce/$id.png";
+	return wp_upload_dir()['baseurl'] . "/SEPA-QR-for-Woocommerce/$id.png";
 }
 
 // helper to validate  the string is syntactically correct md5
@@ -294,7 +294,7 @@ function muxp_add_admin_menu() {
 function muxp_settings_page() {
 	?>
         <div class="wrap">
-            <h1><?php echo __(esc_html(get_admin_page_title()), 'SEPA-QR-for-Woocommerce'); ?></h1>
+            <h1><?php echo esc_html__('SEPA QR', 'SEPA-QR-for-Woocommerce'); ?></h1>
             <form action="options.php" method="post">
                 <div>
                     <?php
@@ -327,7 +327,7 @@ function muxp_store_qr_code_as_image_setting_html() {
 ?>
 		<input type="checkbox" name="muxp_store_qr_code_as_image" <?php checked($store_qr_code_as_image, 'on', true); ?> />
         <p class="description">
-            <?php _e("This will store the QR code as an image on your server instead of generating a transient base64 string. This has consequences for the GDPR compliance of your website and you should inform your customers as such.", 'SEPA-QR-for-Woocommerce') ?>
+            <?php esc_html_e("This will store the QR code as an image on your server instead of generating a transient base64 string. This has consequences for the GDPR compliance of your website and you should inform your customers as such.", 'SEPA-QR-for-Woocommerce') ?>
         </p>
     <?php
 }
@@ -339,7 +339,7 @@ function muxp_activate() {
 }
 
 function muxp_uninstall() {
-	$target_dir = wp_upload_dir()['basedir'] . '/muxp-SEPA-QR-for-Woocommerce';
+	$target_dir = wp_upload_dir()['basedir'] . '/SEPA-QR-for-Woocommerce';
 	if (is_dir($target_dir)) {
 		rmdir($target_dir);
 	}

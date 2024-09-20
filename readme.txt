@@ -1,4 +1,4 @@
-=== SEPA QR-Code for Woocommerce (GDPR-compliant) ===
+=== SEPA QR-Code for Woocommerce ===
 Contributors: thedoctorcoernel
 Tags: woocommerce, payment, qr, qrcode, qr-code, bacs, sepa-qr, sepa, payconiq
 Requires at least: 4.7
