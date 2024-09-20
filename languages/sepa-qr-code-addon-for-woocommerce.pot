@@ -1,0 +1,72 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SEPA-QR-Code for Woocommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-24 09:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.3\n"
+"X-Domain: sepa-qr-code-addon-for-woocommerce"
+
+#. Description of the plugin
+msgid ""
+"Free plugin that adds a SEPA-QR Code for bank transfer payments (bacs) in the WooCommerce emails and order confirmation screen."
+msgstr ""
+
+#: muxp-sepaqr.php:143
+msgid "For a convenient payment scan this qr code!"
+msgstr ""
+
+#: muxp-sepaqr.php:187
+msgid ""
+"For a convenient payment scan this qr code! Some email clients unfortunately will not show Base64 encoded images. Sorry for that!"
+msgstr ""
+
+#: muxp-sepaqr.php:530
+msgid "GDPR"
+msgstr ""
+
+#: muxp-sepaqr.php:233
+msgid "Generating uncached dummy QR for 11 Euro/OrderID 11"
+msgstr ""
+
+#. URI of the plugin
+#. Author of the plugin
+#. Author URI of the plugin
+msgid "https://github.com/petermorlion/SEPA-QR-for-Woocommerce"
+msgstr ""
+
+#: muxp-sepaqr.php:370
+msgid "Order-ID:"
+msgstr ""
+
+#: muxp-sepaqr.php:504
+msgid "SEPA QR"
+msgstr ""
+
+#. Name of the plugin
+msgid "SEPA-QR-Code for Woocommerce"
+msgstr ""
+
+#: muxp-sepaqr.php:532
+msgid "Store QR code as image"
+msgstr ""
+
+#: muxp-sepaqr.php:233
+msgid "This is not a valid md5 hash :-( "
+msgstr ""
+
+#: muxp-sepaqr.php:543
+msgid ""
+"This will store the QR code as an image on your server instead of generating "
+"a transient base64 string. This has consequences for the GDPR compliance of "
+"your website and you should inform your customers as such."
+msgstr ""
