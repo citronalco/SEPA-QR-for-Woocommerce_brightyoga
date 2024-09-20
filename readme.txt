@@ -1,9 +1,9 @@
 === SEPA QR-Code for Woocommerce ===
 Contributors: thedoctorcoernel
-Tags: woocommerce, payment, qr, qrcode, qr-code, bacs, sepa-qr, sepa, payconiq
+Tags: woocommerce, payment, sepa, qr
 Requires at least: 4.7
 Tested up to: 6.6.2
-Stable tag: 1.2.0
+Stable tag: 2.0.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,10 @@ by your website with the QR code.
 2. example how the qr-code is hooked into a pdf envoice
 
 == Changelog ==
+
+= 2.0.1 =
+
+* Fixed issues found by Plugin Check
 
 = 2.0.0 =
 
