@@ -69,3 +69,9 @@ by your website with the QR code.
 
 = 1.0.4 =
 * initial commit to the wordpress directory
+
+== Development ==
+
+Development happens in the [GitHub](https://github.com/petermorlion/SEPA-QR-for-Woocommerce)
+repository. The [SVN](https://plugins.svn.wordpress.org/sepa-qr-code-for-woocommerce/)
+repository is for releases only.
