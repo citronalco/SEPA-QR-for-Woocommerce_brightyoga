@@ -6,12 +6,12 @@
  * @package   muxp/sepaqr
  * @author    Bureau fuer Angelegenheiten 
  * @license   GPL-2.0+
- * @link      https://github.com/petermorlion/SEPA-QR-for-Woocommerce
+ * @link      https://github.com/citronalco/SEPA-QR-for-Woocommerce_brightyoga
  * @copyright 2022 BUFANG
  *
  * @wordpress-plugin
  * Plugin Name:       SEPA-QR-Code for Woocommerce
- * Plugin URI:        https://github.com/petermorlion/SEPA-QR-for-Woocommerce
+ * Plugin URI:        https://github.com/citronalco/SEPA-QR-for-Woocommerce_brightyoga
  * Description:       Free plugin that adds a SEPA-QR Code for bank transfer payments (bacs) in the WooCommerce emails and order confirmation screen.
  * Version:           2.0.1
  * Author:            Peter Morlion
