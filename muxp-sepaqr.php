@@ -70,7 +70,7 @@ function muxp_add_text_to_thankyoupage($order_id) {
     // do we need the user? if so: $user = $order->get_user();
 	if ( !empty($order->get_total()) && (float)$order->get_total() > 0 ) {
 		echo '<p>' . esc_attr(__('For a convenient payment scan this qr code!' , 'SEPA-QR-for-Woocommerce')) . '<br>';
-		echo '<img class="muxp-bacs-qrcode" src="' . esc_attr(muxp_get_qrcode($order->get_total(), $order->get_order_number())) . '" alt="qr-code"></p>';
+		echo '<img class="muxp-bacs-qrcode" src="' . esc_attr(muxp_get_qrcode($order->get_total(), $order->get_order_number()." ".$order_data['billing']['first_name']." ".$order_data['billing']['last_name'])) . '" alt="qr-code"></p>';
 	} 
 }
 
@@ -110,7 +110,7 @@ function muxp_email_after_order_table( $order, $sent_to_admin, $plain_text, $ema
 			
 			?>
 			<br>
-			<img class="muxp-bacs-qrcode" src="<?php echo esc_attr(muxp_get_qrcode($order->get_total(), $order->get_order_number())) ?>" alt="qr-code">
+			<img class="muxp-bacs-qrcode" src="<?php echo esc_attr(muxp_get_qrcode($order->get_total(), $order->get_order_number(). " ".$order->get_billing_first_name()." ".$order->get_billing_last_name())) ?>" alt="qr-code">
 		</p>
 		<?php
 
